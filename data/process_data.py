@@ -1,9 +1,3 @@
-# Project: Disaster Response Pipeline
-# Script Syntax for execution:
-# python process_data.py <path to messages csv file> <path to categories csv file> <path to sqllite  destination db>
-# python process_data.py disaster_messages.csv disaster_categories.csv disaster_response.db
-
-
 # import libraries
 import sys
 import pandas as pd

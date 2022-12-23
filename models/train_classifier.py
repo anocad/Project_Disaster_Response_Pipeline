@@ -89,35 +89,12 @@ def tokenize(text):
         clean_tokens.append(clean_token)
 
     return clean_tokens
-'''
-def build_model():
-    """
-    This function output is a SciKit ML Pipeline that process text messages
-    according to NLP best-practice and apply a classifier.
-        
-    Returns:
-        gs_cv(obj): an estimator which chains together a nlp-pipeline with
-                    a multi-class classifier
-    
-    """
-    pipeline = Pipeline([
-        ('vect',TfidfVectorizer(tokenizer=tokenize)),
-        ('clf', MultiOutputClassifier(RandomForestClassifier(n_estimators=200,random_state=20)))
-    ])
-    
-    # Only limited number of paramters is specified, since the more training was done in jupyter notebook
-    parameters = {
-        'clf__estimator__max_depth': [2, None]
-    }
 
-    cv = GridSearchCV(pipeline, param_grid=parameters,n_jobs=-1)
-    return cv
-'''
 
 def build_model():
     pipeline = Pipeline([
-        #('vect', TfidfVectorizer(tokenizer=tokenize)),
-        ('vect', CountVectorizer(tokenizer=tokenize)),
+        ('vect', TfidfVectorizer(tokenizer=tokenize)),
+        #('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
