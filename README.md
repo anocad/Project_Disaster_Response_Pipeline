@@ -41,21 +41,25 @@ The project must run with Python 3 with libraries of numpy, pandas, sqlalchemy, 
 4. README file
 
 ~~~~~~~
-        project_disaster_response_pipeline
-          |-- app
+      project_disaster_response_pipeline
+            |-- app
                 |-- templates
                         |-- go.html
                         |-- master.html
                 |-- run.py
-          |-- data
+            |-- data
                 |-- disaster_categories.csv
                 |-- disaster_messages.csv
                 |-- DisasterResponse.db
                 |-- process_data.py
-          |-- models
+            |-- images
+                |-- Message_classifier_demo.PNG
+                |-- Overview_of_training_dataset.PNG
+                |-- Web_app.PNG
+            |-- models
                 |-- classifier.pkl
                 |-- train_classifier.py
-          |-- Preparation
+            |-- notebooks
                 |-- disaster_categories.csv
                 |-- disaster_messages.csv
                 |-- ETL Pipeline Preparation.ipynb
